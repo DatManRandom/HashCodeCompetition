@@ -6,11 +6,11 @@ import java.util.List;
 public class CarFactory {
     private List<Car> carList = new ArrayList<>();
 
-    protected void addCar(String[] streets){
+    protected static void addCar(String[] streets){
         carList.add(new Car(List.of(streets)));
     }
 
-    private class Car{
+    private static class Car{
         List<String> streets = new ArrayList<>();
 
         public Car(List<String> streets) {

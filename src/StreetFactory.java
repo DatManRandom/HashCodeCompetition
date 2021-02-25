@@ -4,12 +4,12 @@ import java.util.List;
 public class StreetFactory {
     private static List<Street> streetList = new ArrayList<>();
 
-    protected void addStreet(String name, int startInt, int endInt) {
+    protected static void addStreet(String name, int startInt, int endInt) {
         streetList.add(new Street(startInt, endInt, name));
     }
 
 
-    private class Street {
+    private static class Street {
         private int startIntersection;
         private int endIntersection;
         private String streetName;
