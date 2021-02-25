@@ -29,7 +29,6 @@ public class Main {
         streets = Integer.parseInt(first_line[2]);
         cars = Integer.parseInt(first_line[3]);
         bouns = Integer.parseInt(first_line[4]);
-        //Set(simulation_time, intersictions, streets, cars, bouns);
         int counter = 0;
 
 
