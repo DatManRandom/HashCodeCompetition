@@ -9,14 +9,7 @@ public class Main {
     private static Integer streets;
     private static Integer cars;
     private static Integer bouns;
-
-    public static void Set(Integer simulation_time, Integer intersections, Integer streets, Integer cars, Integer bouns) {
-        Main.simulation_time = simulation_time;
-        Main.intersections = intersections;
-        Main.streets = streets;
-        Main.cars = cars;
-        Main.bouns = bouns;
-    }
+    private  static int counter = 1;
 
     public static void main(String[] args) throws IOException {
         List<String> input = Files.readAllLines(Paths.get("a.txt"));
@@ -29,8 +22,20 @@ public class Main {
         streets = Integer.parseInt(first_line[2]);
         cars = Integer.parseInt(first_line[3]);
         bouns = Integer.parseInt(first_line[4]);
-        int counter = 0;
 
+
+        while(counter<=streets){
+            String[] streets_splited=input.get(counter).split(" ");
+            Integer begining=Integer.parseInt(streets_splited[0]),
+                    ending=Integer.parseInt(streets_splited[1]),
+                    time=Integer.parseInt(streets_splited[3]);
+            StreetFactory.addStreet(begining,ending,streets_splited[2],time);
+            ++counter;
+        }
+
+        while (counter<=cars){
+
+        }
 
     }
 }
