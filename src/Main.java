@@ -1,7 +1,9 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 public class Main {
     private static Integer simulation_time;
@@ -34,7 +36,9 @@ public class Main {
         }
 
         while (counter<=cars){
-
+            String[] cars_splited=input.get(counter).split(" ");
+            CarFactory.addCar(Arrays.copyOfRange(cars_splited, 1, Integer.parseInt(cars_splited[0])+1));
+            ++counter;
         }
 
     }
