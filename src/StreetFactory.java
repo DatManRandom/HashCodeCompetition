@@ -27,8 +27,11 @@ public class StreetFactory {
             String key = street.getKey();
             Street value = street.getValue();
             for (CarFactory.Car car : CarFactory.carList) {
-                for () {
-
+                for(String street_name:car.getStreets()){
+                    if(street_name== value.streetName){
+                        value.tripCarScore+=car.getScore()/value.startingCarScore+1;
+                        streetHash.put(key, value);
+                    }
                 }
             }
         }
