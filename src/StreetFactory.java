@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class StreetFactory {
     protected static HashMap<String, Street> streetHash = new HashMap<>();
@@ -7,11 +9,21 @@ public class StreetFactory {
         streetHash.put(name, new Street(startInt, endInt, name, time));
     }
 
-    void setStartingCarScore(){
-        CarFactory.
+    public static void setStartingCarScore() {
+        for (Map.Entry<String, Street> street : streetHash.entrySet()) {
+            String key = street.getKey();
+            Street value = street.getValue();
+            for (CarFactory.Car car : CarFactory.carList) {
+                if (car.getStreets().get(0) == key) {
+                    value.setStartingCarScore(car.getScore());
+                    streetHash.put(key, value);
+                }
+            }
+        }
     }
+
     //Score of car that moves in this street / number of streets this car moves in
-    void setTripCarScore(){
+    void setTripCarScore() {
 
     }
 
