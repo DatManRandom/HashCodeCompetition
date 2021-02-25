@@ -37,7 +37,7 @@ public class Main {
 
         while (counter<=cars){
             String[] cars_splited=input.get(counter).split(" ");
-            CarFactory.addCar(Arrays.copyOfRange(cars_splited, 1, Integer.parseInt(cars_splited[0])+1));
+            CarFactory.addCar(Arrays.copyOfRange(cars_splited, 1, Integer.parseInt(cars_splited[0])-1));
             ++counter;
         }
 
