@@ -4,15 +4,32 @@ import java.util.List;
 public class StreetFactory {
     private static List<Street> streetList = new ArrayList<>();
 
-    protected static void addStreet(String name, int startInt, int endInt) {
-        streetList.add(new Street(startInt, endInt, name));
+    protected static void addStreet(int startInt, int endInt, String name, int time) {
+        streetList.add(new Street(startInt, endInt, name, time));
     }
+
 
 
     private static class Street {
         private int startIntersection;
         private int endIntersection;
         private String streetName;
+        private int time;
+
+        public Street(int startIntersection, int endIntersection, String streetName, int time) {
+            this.startIntersection = startIntersection;
+            this.endIntersection = endIntersection;
+            this.streetName = streetName;
+            this.time = time;
+        }
+
+        public int getTime() {
+            return time;
+        }
+
+        public void setTime(int time) {
+            this.time = time;
+        }
 
         public int getStartIntersection() {
             return startIntersection;
@@ -36,13 +53,6 @@ public class StreetFactory {
 
         public void setStreetName(String streetName) {
             this.streetName = streetName;
-        }
-
-        public Street(int startIntersection, int endIntersection, String streetName) {
-            this.startIntersection = startIntersection;
-            this.endIntersection = endIntersection;
-            this.streetName = streetName;
-
         }
     }
 }
