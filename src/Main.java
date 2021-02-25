@@ -41,8 +41,9 @@ public class Main {
         }
 
         StreetFactory.setStartingCarScore();
+        StreetFactory.setTripCarScore();
 
-
+        
     }
 
 }

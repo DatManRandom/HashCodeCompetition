@@ -8,7 +8,7 @@ public class StreetFactory {
         streetHash.put(name, new Street(startInt, endInt, name, time));
     }
 
-    public static void setStartingCarScore() {
+    protected static void setStartingCarScore() {
         for (Map.Entry<String, Street> street : streetHash.entrySet()) {
             String key = street.getKey();
             Street value = street.getValue();
@@ -22,7 +22,7 @@ public class StreetFactory {
     }
 
     //Score of car that moves in this street / number of streets this car moves in
-    public static void setTripCarScore() {
+    protected static void setTripCarScore() {
         for (Map.Entry<String, Street> street : streetHash.entrySet()) {
             String key = street.getKey();
             Street value = street.getValue();
