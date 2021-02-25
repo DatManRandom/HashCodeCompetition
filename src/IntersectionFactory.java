@@ -1,11 +1,11 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class IntersectionFactory {
     protected static List<Intersection> intersectionList = new ArrayList<>();
 
+    protected static void sortinintersection() {
+        intersectionList.sort(Comparator.comparingInt(Intersection::getScore));
+    }
     public void setStreetTime() {
 
     }
