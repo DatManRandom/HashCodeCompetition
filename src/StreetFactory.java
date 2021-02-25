@@ -8,7 +8,7 @@ public class StreetFactory {
     }
 
     void setStartingCarScore(){
-
+        CarFactory.
     }
     //Score of car that moves in this street / number of streets this car moves in
     void setTripCarScore(){

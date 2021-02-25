@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarFactory {
-    private static List<Car> carList = new ArrayList<>();
+    protected static List<Car> carList = new ArrayList<>();
     //private static HashMap<String, Integer> streetHash = new HashMap<String, Integer>();
 
     protected static void addCar(String[] streets) {
