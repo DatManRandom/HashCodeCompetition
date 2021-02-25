@@ -1,29 +1,27 @@
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 
 public class IntersectionFactory {
     protected static List<Intersection> intersectionList = new ArrayList<>();
-
-    public void setStreetTime() {
-
-    }
 
     protected static class Intersection {
         private int id;
         private List<StreetFactory.Street> streetList;
         private int score;
 
-        public Intersection(int id) {
+        public Intersection(int id, List<StreetFactory.Street> streetList) {
             this.id = id;
-        }
+            for (StreetFactory.Street street : streetList) {
+                score += street.getStartingCarScore();
+            }
+            streetList.sort(Comparator.comparingInt(StreetFactory.Street::getStartingCarScore));
+            for (StreetFactory.Street street : streetList) {
 
-        public Intersection addStreet(StreetFactory.Street street) {
-            if (!streetList.contains(street))
-                streetList.add(street);
-            score += street.getStartingCarScore();
-            return this;
+                street.setLightTime(street.getTripCarScore() + street.getStartingCarScore() / (streetList.size()));
+
+            }
+            this.streetList = streetList;
         }
 
         public void setScore(int score) {

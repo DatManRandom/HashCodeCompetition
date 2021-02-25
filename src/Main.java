@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -49,6 +50,24 @@ public class Main {
             streetAdd.add(value);
             intersections.put(value.getEndIntersection(), streetAdd);
         }
+
+        for (Map.Entry<Integer, List<StreetFactory.Street>> intersection : intersections.entrySet()) {
+            Integer key = intersection.getKey();
+            List<StreetFactory.Street> value = intersection.getValue();
+            IntersectionFactory.intersectionList.add(new IntersectionFactory.Intersection(key, value));
+        }
+
+        String output = "" + IntersectionFactory.intersectionList.size() + "\n";
+        for (IntersectionFactory.Intersection intersection : IntersectionFactory.intersectionList) {
+            output += intersection.getId() + "\n" + intersection.getStreetList().size() + "\n";
+            for (StreetFactory.Street street : intersection.getStreetList())
+                output += street.getStreetName() + " " + street.getLightTime() + "\n";
+        }
+
+        System.out.println(output);
+        PrintWriter out = new PrintWriter("output.txt");
+        out.println(out);
+
     }
 
 }
