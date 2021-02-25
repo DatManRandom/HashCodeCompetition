@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class CarFactory {
-    private List<Car> carList = new ArrayList<>();
+    private static List<Car> carList = new ArrayList<>();
 
     protected static void addCar(String[] streets){
         carList.add(new Car(List.of(streets)));
