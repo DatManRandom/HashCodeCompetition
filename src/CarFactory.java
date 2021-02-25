@@ -1,9 +1,9 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class CarFactory {
     protected static List<Car> carList = new ArrayList<>();
-    //private static HashMap<String, Integer> streetHash = new HashMap<String, Integer>();
 
     protected static void addCar(String[] streets) {
         int score = 0;
@@ -14,8 +14,12 @@ public class CarFactory {
         carList.add(new Car(List.of(streets), score));
     }
 
+    protected static void sortCars() {
+        carList.sort(Comparator.comparingInt(Car::getScore));
+    }
+
     protected static class Car {
-        List<String> streets = new ArrayList<>();
+        List<String> streets;
         int score;
 
         public Car(List<String> streets, int score) {

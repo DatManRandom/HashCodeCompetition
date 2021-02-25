@@ -40,6 +40,9 @@ public class Main {
             ++counter;
         }
 
+        StreetFactory.setStartingCarScore();
+
+
     }
 
 }

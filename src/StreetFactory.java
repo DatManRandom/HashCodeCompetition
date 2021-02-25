@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class StreetFactory {
@@ -15,7 +14,7 @@ public class StreetFactory {
             Street value = street.getValue();
             for (CarFactory.Car car : CarFactory.carList) {
                 if (car.getStreets().get(0) == key) {
-                    value.setStartingCarScore(car.getScore());
+                    value.setStartingCarScore(value.getStartingCarScore() + car.getScore());
                     streetHash.put(key, value);
                 }
             }
@@ -24,7 +23,15 @@ public class StreetFactory {
 
     //Score of car that moves in this street / number of streets this car moves in
     void setTripCarScore() {
+        for (Map.Entry<String, Street> street : streetHash.entrySet()) {
+            String key = street.getKey();
+            Street value = street.getValue();
+            for (CarFactory.Car car : CarFactory.carList) {
+                for () {
 
+                }
+            }
+        }
     }
 
     protected static class Street {
@@ -32,8 +39,8 @@ public class StreetFactory {
         private int endIntersection;
         private String streetName;
         private int time;
-        private int startingCarScore;
-        private int tripCarScore;
+        private int startingCarScore = 0;
+        private int tripCarScore = 0;
 
         public int getStartingCarScore() {
             return startingCarScore;
