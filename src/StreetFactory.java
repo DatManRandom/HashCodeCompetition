@@ -1,16 +1,15 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 public class StreetFactory {
-    private static List<Street> streetList = new ArrayList<>();
+    protected static HashMap<String, Street> streetHash = new HashMap<>();
 
     protected static void addStreet(int startInt, int endInt, String name, int time) {
-        streetList.add(new Street(startInt, endInt, name, time));
+        streetHash.put(name, new Street(startInt, endInt, name, time));
+
     }
 
 
-
-    private static class Street {
+    protected static class Street {
         private int startIntersection;
         private int endIntersection;
         private String streetName;
