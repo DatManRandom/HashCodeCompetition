@@ -8,7 +8,7 @@ public class CarFactory {
 
     protected static void addCar(String[] streets) {
         carList.add(new Car(List.of(streets)));
-        for (String street : streets)
+        for (String street : streets);
             //streetHash.put()
     }
 
