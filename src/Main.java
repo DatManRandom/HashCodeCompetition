@@ -9,5 +9,7 @@ public class Main {
         // input : first line --> duration of the simulation : intersictions : streets : cars : bouns score for cars reach in duration of simulation
         // sec line streets time --> Begining intersiction : ending intersiction : name of street : length of street in secs
         // third line times of cars --> number of streets the car wants to travel : the end of the named street : and then the path
+        String[] first_line =input.get(0).split(" ");
+
     }
 }
