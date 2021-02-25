@@ -1,8 +1,7 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     private static Integer simulation_time;
@@ -43,7 +42,13 @@ public class Main {
         StreetFactory.setStartingCarScore();
         StreetFactory.setTripCarScore();
 
-        
+        HashMap<Integer, List<StreetFactory.Street>> intersections = new HashMap<>();
+        for (Map.Entry<String, StreetFactory.Street> street : StreetFactory.streetHash.entrySet()) {
+            StreetFactory.Street value = street.getValue();
+            List<StreetFactory.Street> streetAdd = intersections.getOrDefault(value.getEndIntersection(), new ArrayList<>());
+            streetAdd.add(value);
+            intersections.put(value.getEndIntersection(), streetAdd);
+        }
     }
 
 }

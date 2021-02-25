@@ -1,10 +1,16 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class IntersectionFactory {
-    protected static HashMap<Integer, Intersection> intersectionHashMap = new HashMap<>();
+    protected static List<Intersection> intersectionList = new ArrayList<>();
 
-    protected class Intersection {
+    public void setStreetTime() {
+
+    }
+
+    protected static class Intersection {
         private int id;
         private List<StreetFactory.Street> streetList;
         private int score;
@@ -13,9 +19,11 @@ public class IntersectionFactory {
             this.id = id;
         }
 
-        public void addStreet(StreetFactory.Street street) {
-            streetList.add(street);
+        public Intersection addStreet(StreetFactory.Street street) {
+            if (!streetList.contains(street))
+                streetList.add(street);
             score += street.getStartingCarScore();
+            return this;
         }
 
         public void setScore(int score) {

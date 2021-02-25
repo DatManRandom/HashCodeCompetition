@@ -44,6 +44,15 @@ public class StreetFactory {
         private int time;
         private int startingCarScore = 0;
         private int tripCarScore = 0;
+        private int lightTime;
+
+        public int getLightTime() {
+            return lightTime;
+        }
+
+        public void setLightTime(int lightTime) {
+            this.lightTime = lightTime;
+        }
 
         public int getStartingCarScore() {
             return startingCarScore;
