@@ -8,8 +8,9 @@ public class CarFactory {
 
     protected static void addCar(String[] streets) {
         carList.add(new Car(List.of(streets)));
-        for (String street : streets);
-            //streetHash.put()
+        for (String street : streets) {
+            streetHash.put(street, streetHash.getOrDefault(street, 0) + 1);
+        }
     }
 
     protected static HashMap<String, Integer> getStreetList() {
