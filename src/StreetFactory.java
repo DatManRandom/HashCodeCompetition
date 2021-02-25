@@ -22,7 +22,7 @@ public class StreetFactory {
     }
 
     //Score of car that moves in this street / number of streets this car moves in
-    void setTripCarScore() {
+    public static void setTripCarScore() {
         for (Map.Entry<String, Street> street : streetHash.entrySet()) {
             String key = street.getKey();
             Street value = street.getValue();
